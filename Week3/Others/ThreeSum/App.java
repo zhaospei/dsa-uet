@@ -21,7 +21,7 @@ public class App {
         
     }
     public static void main(String[] args) {
-        int[] arr = {1, -1, 0, 2, -2};
+        int[] arr = {1, 1, 1, 2, 2, 2, -3};
         ThreeSum(arr);
     }
 }
