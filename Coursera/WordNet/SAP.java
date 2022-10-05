@@ -53,16 +53,15 @@ public class SAP {
     }
 
     private int[] temp(Iterable<Integer> v, Iterable<Integer> w) {
-        if (v == null || w == null) throw new IllegalArgumentException();
-        int cnt = 0;
-        for (Integer x: v) cnt++;
-        if (cnt == 0) throw new IllegalArgumentException("zero vertices");
-        cnt = 0;
-        for (Integer x: w) cnt++;
-        if (cnt == 0) throw new IllegalArgumentException("zero vertices");
-        int[] ans = new int[2];
         int minLen = Integer.MAX_VALUE;
         int pos = -1;
+        int[] ans = new int[2];
+        if (v == null || w == null) throw new IllegalArgumentException();
+        if (!v.iterator().hasNext() || !w.iterator().hasNext()) {
+            ans[0] = -1;
+            ans[1] = -1;
+            return ans;
+        }
         BreadthFirstDirectedPaths graphA = new BreadthFirstDirectedPaths(G, v);
         BreadthFirstDirectedPaths graphB = new BreadthFirstDirectedPaths(G, w);
         for (int i = 0; i < G.V(); i++) {
