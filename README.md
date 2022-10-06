@@ -9,4 +9,4 @@
 - [x] Collinear Points
 - [x] 8 Puzzle
 - [x] WordNet
-- [ ] Seam Carving
+- [x] Seam Carving
